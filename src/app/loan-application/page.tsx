@@ -19,6 +19,8 @@ export default function LoanApplication() {
   const [videoBlob, setVideoBlob] = useState<Blob | null>(null);
   const [documentImage, setDocumentImage] = useState<File | null>(null);
   const [extractedData, setExtractedData] = useState<any>(null);
+  const [responses, setResponses] = useState<string[]>([]);
+  const [result, setResult] = useState<string | null>(null);
   const webcamRef = useRef<Webcam>(null);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
 
@@ -26,10 +28,13 @@ export default function LoanApplication() {
 
   const handleNext = () => {
     if (currentStep < questions.length - 1) {
+      setResponses([...responses, "Sample response"]); // Placeholder for video response
       setCurrentStep(currentStep + 1);
       setVideoBlob(null);
       setDocumentImage(null);
       setExtractedData(null);
+    } else {
+      evaluateEligibility();
     }
   };
 
@@ -70,7 +75,6 @@ export default function LoanApplication() {
     const file = e.target.files?.[0];
     if (file) {
       setDocumentImage(file);
-      // Simulate document processing
       setExtractedData({
         name: "John Doe",
         dob: "1990-05-15",
@@ -79,6 +83,49 @@ export default function LoanApplication() {
       });
     }
   };
+
+  const evaluateEligibility = () => {
+    // Placeholder data from responses and document
+    const income = parseInt(extractedData?.income || "0");
+    const employmentDuration = parseInt(responses[1] || "0"); // e.g., "2 years"
+    const existingLoans = parseInt(responses[3] || "0"); // e.g., "10000"
+
+    // Simple rule-based logic
+    if (income < 30000) {
+      setResult("❌ Rejected: Income below minimum requirement (₹30,000).");
+    } else if (employmentDuration < 1) {
+      setResult("❌ Rejected: Employment duration too short (minimum 1 year).");
+    } else if (existingLoans > income * 0.5) {
+      setResult("❌ Rejected: Existing loans exceed 50% of income.");
+    } else if (!extractedData) {
+      setResult("🔄 More Info Needed: Please upload valid documents.");
+    } else {
+      setResult("✅ Approved: Congratulations, you’re eligible for a loan!");
+    }
+  };
+
+  if (result) {
+    return (
+      <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center py-8">
+        <h1 className="text-3xl font-bold text-blue-600 mb-6">
+          Loan Application Result
+        </h1>
+        <div className="w-full max-w-2xl bg-white p-6 rounded-lg shadow-md text-center">
+          <p className="text-lg text-gray-800 mb-4">{result}</p>
+          <button
+            onClick={() => {
+              setResult(null);
+              setCurrentStep(0);
+              setResponses([]);
+            }}
+            className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+          >
+            Start Over
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center py-8">
@@ -197,7 +244,7 @@ export default function LoanApplication() {
             }
             className="px-4 py-2 bg-blue-600 text-white rounded disabled:bg-blue-300 hover:bg-blue-700 transition"
           >
-            Next
+            {currentStep === questions.length - 1 ? "Submit" : "Next"}
           </button>
         </div>
       </div>
