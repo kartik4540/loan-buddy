@@ -102,11 +102,14 @@ export default function LoanApplication() {
     const file = e.target.files?.[0];
     if (file) {
       setDocumentImage(file);
+      
       setExtractedData({
-        name: "John Doe",
-        dob: "1990-05-15",
+        IdType: "PAN CARD",
+        Name: "Devish Mittal",
+        dob: "22-02-2004", 
+        pan: "HJVPM4886F",
         income: "50000",
-        employmentType: "Full-time",
+        employmentType: "Student", 
       });
     }
   };
@@ -333,48 +336,64 @@ export default function LoanApplication() {
                   />
                 )}
                 {extractedData && (
-                  <div className="bg-gray-50 p-4 rounded-lg shadow-inner">
-                    <h3 className="text-lg font-semibold text-blue-700 mb-2">
-                      {language === "en"
-                        ? "Extracted Data:"
-                        : language === "hi"
-                        ? "निकाला गया डेटा:"
-                        : "பிரித்தெடுக்கப்பட்ட தரவு:"}
-                    </h3>
-                    <p className="text-gray-700">
-                      {language === "en"
-                        ? "Name:"
-                        : language === "hi"
-                        ? "नाम:"
-                        : "பெயர்:"}{" "}
-                      {extractedData.name}
-                    </p>
-                    <p className="text-gray-700">
-                      {language === "en"
-                        ? "DOB:"
-                        : language === "hi"
-                        ? "जन्म तिथि:"
-                        : "பிறந்த தேதி:"}{" "}
-                      {extractedData.dob}
-                    </p>
-                    <p className="text-gray-700">
-                      {language === "en"
-                        ? "Income:"
-                        : language === "hi"
-                        ? "आय:"
-                        : "வருமானம்:"}{" "}
-                      ₹{extractedData.income}
-                    </p>
-                    <p className="text-gray-700">
-                      {language === "en"
-                        ? "Employment Type:"
-                        : language === "hi"
-                        ? "रोजगार प्रकार:"
-                        : "வேலைவாய்ப்பு வகை:"}{" "}
-                      {extractedData.employmentType}
-                    </p>
-                  </div>
-                )}
+  <div className="bg-gray-50 p-4 rounded-lg shadow-inner">
+    <h3 className="text-lg font-semibold text-blue-700 mb-2">
+      {language === "en"
+        ? "Extracted Data:"
+        : language === "hi"
+        ? "निकाला गया डेटा:"
+        : "பிரித்தெடுக்கப்பட்ட தரவு:"}
+    </h3>
+    <p className="text-gray-700">
+      {language === "en"
+        ? "ID Type:"
+        : language === "hi"
+        ? "आईडी प्रकार:"
+        : "அடையாள வகை:"}{" "}
+      {extractedData.IdType}
+    </p>
+    <p className="text-gray-700">
+      {language === "en"
+        ? "Name:"
+        : language === "hi"
+        ? "नाम:"
+        : "பெயர்:"}{" "}
+      {extractedData.Name}
+    </p>
+    <p className="text-gray-700">
+      {language === "en"
+        ? "DOB:"
+        : language === "hi"
+        ? "जन्म तिथि:"
+        : "பிறந்த தேதி:"}{" "}
+      {extractedData.dob}
+    </p>
+    <p className="text-gray-700">
+      {language === "en"
+        ? "PAN:"
+        : language === "hi"
+        ? "पैन:"
+        : "பான்:"}{" "}
+      {extractedData.pan}
+    </p>
+    <p className="text-gray-700">
+      {language === "en"
+        ? "Income:"
+        : language === "hi"
+        ? "आय:"
+        : "வருமானம்:"}{" "}
+      ₹{extractedData.income}
+    </p>
+    <p className="text-gray-700">
+      {language === "en"
+        ? "Employment Type:"
+        : language === "hi"
+        ? "रोजगार प्रकार:"
+        : "வேலைவாய்ப்பு வகை:"}{" "}
+      {extractedData.employmentType}
+    </p>
+  </div>
+)}
               </div>
             </>
           )}
