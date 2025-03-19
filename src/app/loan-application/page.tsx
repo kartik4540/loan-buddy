@@ -16,7 +16,7 @@ export default function LoanApplication() {
         "Do you have any existing loans? If yes, please specify the amount.",
         "Perfect! Now, please upload your Aadhaar, PAN, or income proof.",
       ],
-      videoUrl: "https://www.youtube.com/watch?v=ysz5S6PUM-U",
+      videoUrl: "https://youtu.be/YpPMwMnIF7w",
     },
     hi: {
       name: "Hindi",
@@ -27,7 +27,7 @@ export default function LoanApplication() {
         "क्या आपके पास कोई मौजूदा ऋण है? यदि हाँ, तो राशि बताएं।",
         "उत्तम! अब कृपया अपना आधार, पैन, या आय प्रमाण अपलोड करें।",
       ],
-      videoUrl: "https://www.youtube.com/watch?v=ysz5S6PUM-U",
+      videoUrl: "https://youtu.be/YpPMwMnIF7w",
     },
     ta: {
       name: "Tamil",
@@ -38,7 +38,7 @@ export default function LoanApplication() {
         "உங்களிடம் ஏற்கனவே கடன்கள் உள்ளனவா? ஆம் எனில், தொகையை குறிப்பிடவும்。",
         "சரியாக! இப்போது உங்கள் ஆதார், பான், அல்லது வருமான சான்றை பதிவேற்றவும்。",
       ],
-      videoUrl: "https://www.youtube.com/watch?v=ysz5S6PUM-U",
+      videoUrl: "https://youtu.be/YpPMwMnIF7w",
     },
   };
 
