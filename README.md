@@ -2,6 +2,12 @@
 
 A modern, AI-powered virtual branch manager that guides users through loan applications using video-based interactions. Built with Next.js, this app provides a seamless, branch-like experience for applying for loans digitally, complete with document submission, eligibility checks, and multi-language support.
 
+
+
+https://github.com/user-attachments/assets/c0986cee-9ff6-4c41-9de9-8051609fe158
+
+
+
 ## Features
 
 ### Virtual AI Branch Manager
