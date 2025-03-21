@@ -1,3 +1,54 @@
+# LoanBuddy
+
+A modern loan application and calculator platform built with Next.js, featuring multi-language support and interactive user interfaces.
+
+## Features
+
+- 🌐 Multi-language support (English, Hindi, Tamil)
+- 💰 EMI Calculator
+- ✅ Loan Eligibility Check
+- 📊 Loan Comparison Tool
+- 🎥 Video-based Loan Application
+- 🗣️ Voice Response Support
+- ⌨️ Text-based Application Option
+
+## Tech Stack
+
+- Next.js 15.2.3
+- TypeScript
+- Tailwind CSS
+- Web Speech API
+
+## Getting Started
+
+1. Clone the repository:
+```bash
+git clone https://github.com/kartik4540/loan-buddy.git
+```
+
+2. Install dependencies:
+```bash
+cd loan-buddy
+npm install
+```
+
+3. Run the development server:
+```bash
+npm run dev
+```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Available Pages
+
+- `/` - Welcome page
+- `/calculator` - Loan calculators (EMI, Eligibility, Comparison)
+- `/loan-application` - Interactive loan application process
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
 # AI Branch Manager – Video-Based Loan Assistance
 
 A modern, AI-powered virtual branch manager that guides users through loan applications using video-based interactions. Built with Next.js, this app provides a seamless, branch-like experience for applying for loans digitally, complete with document submission, eligibility checks, and multi-language support.
